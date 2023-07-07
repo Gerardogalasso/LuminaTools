@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <title>Genera link WhatsApp</title>
+  <style>
+    body {
+      font-family: 'Fira Sans', sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #273240;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background-color:#448aff;
+    }
+
+    .copy-container {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .copy-container label {
+      margin-right: 10px;
+    }
+
+    .copy-textbox {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .copy-button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      background-color: #273240;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .copy-button:hover {
+      background-color:#448aff;
+    }
+    p{
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    span{
+      font-size: 11px;
+    }
+    .card{
+      border: 1px solid rgb(158, 158, 158);
+      padding: 40px;
+      border-bottom: 8px solid #448aff;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Come creare un link a WhatsApp ? Ottenere il link WhatsApp Chat in soli 3 passi</h1>
+    <div class="card">
+      <div class="form-group">
+        <label for="phone">Digitare il numero di WhatsApp</label>
+        <input type="text" id="phone" placeholder="Numero WhatsApp" />
+      </div>
+      <div class="form-group">
+        <label for="message">Messaggio di benvenuto (opzionale)</label>
+        <input type="text" id="message" placeholder="Messaggio" />
+        <span>Aggiungete automaticamente un messaggio personalizzato che precompila quello che i vostri contatti invieranno, rendendo più facile l'avvio di una conversazione.</span>
+      </div>
+      <button onclick="generateLink()"> Genera il collegamento </button>
+      <div class="copy-container">
+        <label for="copy-link">Link generato:</label>
+        <input type="text" id="copy-link" class="copy-textbox" readonly/>
+        <button onclick="copyLink()" class="copy-button">Copia</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function generateLink() {
+      var phone = document.getElementById('phone').value;
+      var message = document.getElementById('message').value;
+
+      var link = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+      var copyLinkTextbox = document.getElementById('copy-link');
+      copyLinkTextbox.value = link;
+    }
+
+    function copyLink() {
+      var copyLinkTextbox = document.getElementById('copy-link');
+      copyLinkTextbox.select();
+      copyLinkTextbox.setSelectionRange(0, 99999); /* For mobile devices */
+      document.execCommand('copy');
+      alert("Link copiato!");
+    }
+  </script>
+</body>
+</html>
