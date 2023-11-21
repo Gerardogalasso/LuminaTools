@@ -1,137 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  <title>Genera link WhatsApp</title>
-  <style>
-    body {
-      font-family: 'Fira Sans', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-XsP+KDqgMfW3Iw3JS0IvODbboNwo7dxozc1sWhSH67DD2ZNjUEVMyheep3G2v2JF1e9FawQLy5Z+K7hqI1NNlXQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+        header {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding: 1em;
+        }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+        .visit-site-button {
+            display: inline-block;
+            padding: 10px 10px;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 15px;
+            margin-left: 50px; /* Riduci il margine per dispositivi mobili */
+        }
 
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
+        h1 {
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+        .logo-circle {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            overflow: hidden;
+        }
 
-    button {
-      padding: 10px 20px;
-      background-color: #273240;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      border-radius: 10px;
-      font-size: 15px;
-    }
+        .logo-image {
+            max-width: 100%; /* Assicura che l'immagine si adatti alla larghezza del contenitore */
+            height: auto;
+        }
 
-    button:hover {
-      background-color:#448aff;
-    }
+        .logo-icon {
+            color: #fff;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: center;
+        }
 
-    .copy-container {
-      display: flex;
-      align-items: center;
-      margin-top: 20px;
-    }
+        section {
+            max-width: 550px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 1px;
+        }
 
-    .copy-container label {
-      margin-right: 10px;
-    }
+        p {
+            line-height: 1.6;
+        }
 
-    .copy-textbox {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+        /* Apply ::selection style to every third section */
+        section:nth-child(3n)::selection {
+            background-color: #ffff99;
+            color: black;
+        }
 
-    .copy-button {
-      margin-left: 10px;
-      padding: 8px 16px;
-      background-color: #273240;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 15px;
-    }
+        /* Apply a different ::selection style to every third section */
+        section:nth-child(3n)::selection {
+            background-image: url('link_all_immagine_selezione.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
-    .copy-button:hover {
-      background-color:#448aff;
-    }
-    p{
-      line-height: 1.8;
-      font-size: 18px;
-    }
-    span{
-      font-size: 11px;
-    }
-    .card{
-      border: 1px solid rgb(158, 158, 158);
-      padding: 40px;
-      border-bottom: 8px solid #448aff;
-      border-radius: 10px;
-    }
-  </style>
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+
+        .download-buttonblack {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
+
+        ::selection {
+            background-color: #ffff99;
+            color: black;
+        }
+
+        ::selection {
+            background-image: url('link_all_immagine_selezione.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        hr {
+            border: 1px solid black;
+        }
+
+        @media only screen and (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+            .visit-site-button {
+                margin-left: 10px; /* Rimuovi il margine a sinistra per dispositivi mobili */
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .download-link {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Lumina Tools</title>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Scopri come generare rapidamente un link per la chat su WhatsApp in soli tre semplici passaggi</h1>
-    <div class="card">
-      <div class="form-group">
-        <label for="phone">Digitare il numero di WhatsApp</label>
-        <input type="text" id="phone" placeholder="Numero WhatsApp" />
-      </div>
-      <div class="form-group">
-        <label for="message">Messaggio di benvenuto (opzionale)</label>
-        <input type="text" id="message" placeholder="Messaggio" />
-        <span>Includete automaticamente un messaggio personalizzato che verrà precompilato nell'area di testo, semplificando così l'inizio di una conversazione per i vostri contatti.</span>
-      </div>
-      <button onclick="generateLink()"> Genera il collegamento </button>
-      <div class="copy-container">
-        <label for="copy-link">Link generato:</label>
-        <input type="text" id="copy-link" class="copy-textbox" readonly/>
-        <button onclick="copyLink()" class="copy-button">Copia</button>
-      </div>
-    </div>
-  </div>
 
-  <script>
-    function generateLink() {
-      var phone = document.getElementById('phone').value;
-      var message = document.getElementById('message').value;
+    <header>
+        <h1>
+            <span class="logo-circle">
+                <img src="link_all_immagine.jpg" alt="Logo Image" class="logo-image"> 🌟
+            </span>
+            Lumina Tools
+            <a href="https://www.instagram.com/luminatools/" class="visit-site-button">Instagram</a>
+        </h1>
+    </header>
+    <hr>
 
-      var link = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    <section>
 
-      var copyLinkTextbox = document.getElementById('copy-link');
-      copyLinkTextbox.value = link;
-    }
+        <h2>Lumina Tools</h2>
 
-    function copyLink() {
-      var copyLinkTextbox = document.getElementById('copy-link');
-      copyLinkTextbox.select();
-      copyLinkTextbox.setSelectionRange(0, 99999); /* For mobile devices */
-      document.execCommand('copy');
-      alert("Link copiato!");
-    }
-  </script>
+        <a href="https://t.me/luminatools" class="download-button">Canale Telegram</a>
+        <a href="https://whatsapp.com/channel/0029VaCQrZuJf05djRB0f70L" class="download-buttonblack">Canale WhatsApp</a>
+
+        <p>Benvenuto su Lumina Tools. 🌟 Seguici per scoprire i migliori strumenti disponibili sulla rete, progettati per semplificare la tua vita online. Da software innovativi a risorse indispensabili, esploreremo insieme le soluzioni più efficaci per ottimizzare il tuo lavoro e la tua esperienza sul web. Non perdere l'opportunità di restare al passo con le ultime novità e di scoprire come rendere la tua presenza online più efficiente e appagante. Iscriviti ora a Lumina Tools e trasforma la tua esperienza digitale!</p>
+
+    </section>
+
+    <section>
+      <h2>Best Tools</h2>
+
+      <table>
+          <thead>
+              <tr>
+                  <th>Tool</th>
+                  <th>Descrizione</th>
+                  <th>Link</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>HubSpot Email Signature Generator</td>
+                  <td>HubSpot Email Signature Generator è uno strumento online che consente di creare firme di posta elettronica personalizzate per comunicazioni professionali, migliorando l'aspetto e la coerenza delle email aziendali.</td>
+                  <td><a href="https://www.hubspot.com/email-signature-generator">HubSpot Email Signature Generator</a></td>
+              </tr>
+              <tr>
+                  <td>Image Creator </td>
+                  <td>Image Creator è uno strumento che offre agli utenti la possibilità di creare immagini tramite l'utilizzo dell'intelligenza artificiale di DALL·E 3. Basta inserire un testo descrittivo, e l'intelligenza artificiale genererà un insieme di immagini che rispecchiano la descrizione fornita.</td>
+                  <td><a href="https://www.bing.com/create">Image Creator </a></td>
+              </tr>
+              <tr>
+                <td>Generate Spreadsheet Formulas with AI</td>
+                <td>Generate Spreadsheet Formulas with AI semplifica la creazione di formule complesse nei fogli di calcolo utilizzando l'intelligenza artificiale, ottimizzando il flusso di lavoro e consentendo una gestione efficiente dei dati.</td>
+                <td><a href="https://www.bing.com/create">Generate Spreadsheet Formulas with AI</a></td>
+            </tr>
+            <tr>
+              <td>Smash</td>
+              <td>Smash è un servizio per la condivisione di file di grandi dimensioni. Carica un file e genera un link condivisibile per consentire agli altri di scaricarlo. Utile per condividere file troppo grandi per l'invio tramite e-mail.</td>
+              <td><a href="https://fromsmash.com/it">Smash</a></td>
+          </tr>
+          <tr>
+            <td>Microsoft Designer </td>
+            <td>Microsoft Designer offre funzionalità avanzate di intelligenza artificiale. È in grado di generare design e immagini originali basandosi su input testuali.</td>
+            <td><a href="https://designer.microsoft.com/">Microsoft Designer </a></td>
+        </tr>
+              <!-- Add more rows as needed -->
+          </tbody>
+      </table>
+  </section>
+
 </body>
+
 </html>
